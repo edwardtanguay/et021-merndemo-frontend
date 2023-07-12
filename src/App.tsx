@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 import axios from 'axios';
+import { Framework } from './components/Framework';
 
 const url = 'http://localhost:4801/frameworks';
 
@@ -28,16 +29,7 @@ function App() {
 					<p>There are {frameworks.length} frameworks.</p>
 					<div className="frameworks">
 						{frameworks.map((framework) => {
-							return (
-								<div className="framework">
-									<div className="title">
-										{framework.title}
-									</div>
-									<div className="description">
-										{framework.description}
-									</div>
-								</div>
-							);
+							return <Framework/>
 						})}
 					</div>
 				</>
