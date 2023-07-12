@@ -1,0 +1,16 @@
+body {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+
+.frameworks {
+  margin-top: 1rem;
+
+  .framework {
+    background-color: orange;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 20rem;
+  }
+}

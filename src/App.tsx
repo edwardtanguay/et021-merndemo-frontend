@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
-import './App.css';
+import './App.scss';
 import axios from 'axios';
 
 const url = 'http://localhost:4801/frameworks';
 
+interface IFramework {
+	title: string;
+	description: string;
+}
+
 function App() {
-	const [frameworks, setFrameworks] = useState([]);
+	const [frameworks, setFrameworks] = useState<IFramework[]>([]);
 
 	useEffect(() => {
 		setTimeout(async () => {
@@ -19,7 +24,23 @@ function App() {
 		<div>
 			<h1>Frameworks</h1>
 			{frameworks.length > 0 ? (
-				<p>There are {frameworks.length} frameworks.</p>
+				<>
+					<p>There are {frameworks.length} frameworks.</p>
+					<div className="frameworks">
+						{frameworks.map((framework) => {
+							return (
+								<div className="framework">
+									<div className="title">
+										{framework.title}
+									</div>
+									<div className="description">
+										{framework.description}
+									</div>
+								</div>
+							);
+						})}
+					</div>
+				</>
 			) : (
 				<div>loading...</div>
 			)}
