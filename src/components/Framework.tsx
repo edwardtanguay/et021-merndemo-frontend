@@ -4,8 +4,7 @@ interface IProps {
 	framework: IFramework;
 }
 
-export const Framework = (props: IProps) => {
-	const framework = props.framework;
+export const Framework = ({framework}: IProps) => {
 	return (	
 		<div className="framework">
 			<div className="title">{framework.title}</div>
