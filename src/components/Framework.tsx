@@ -1,9 +1,15 @@
-export const Framework = () => {
-	return (
+import { IFramework } from "../interfaces";
+
+interface IProps {
+	framework: IFramework;
+}
+
+export const Framework = (props: IProps) => {
+	const framework = props.framework;
+	return (	
 		<div className="framework">
-			test
-			{/* <div className="title">{framework.title}</div>
-			<div className="description">{framework.description}</div> */}
+			<div className="title">{framework.title}</div>
+			<div className="description">{framework.description}</div>
 		</div>
 	);
 };

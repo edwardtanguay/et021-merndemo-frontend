@@ -2,13 +2,9 @@ import { useState, useEffect } from 'react';
 import './App.scss';
 import axios from 'axios';
 import { Framework } from './components/Framework';
+import { IFramework } from './interfaces';
 
 const url = 'http://localhost:4801/frameworks';
-
-interface IFramework {
-	title: string;
-	description: string;
-}
 
 function App() {
 	const [frameworks, setFrameworks] = useState<IFramework[]>([]);
@@ -29,7 +25,7 @@ function App() {
 					<p>There are {frameworks.length} frameworks.</p>
 					<div className="frameworks">
 						{frameworks.map((framework) => {
-							return <Framework/>
+							return <Framework framework={framework} />
 						})}
 					</div>
 				</>
